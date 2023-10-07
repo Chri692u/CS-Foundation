@@ -24,15 +24,9 @@ executable matrix-io
     hs-source-dirs:   examples
     default-language: Haskell2010
 
-executable equation-system
-    main-is:          EquationSystem.hs
+executable graph-io
+    main-is:          GraphIO.hs
     build-depends:    base, CS-Foundation
-    hs-source-dirs:   examples
-    default-language: Haskell2010
-
-executable fixpoint
-    main-is:          Fixpoint.hs
-    build-depends:    base, containers, CS-Foundation
     hs-source-dirs:   examples
     default-language: Haskell2010
 
@@ -42,9 +36,15 @@ executable bplus-io
     hs-source-dirs:   examples
     default-language: Haskell2010
 
-executable graph-io
-    main-is:          GraphIO.hs
+executable equation-system
+    main-is:          EquationSystem.hs
     build-depends:    base, CS-Foundation
+    hs-source-dirs:   examples
+    default-language: Haskell2010
+
+executable fixpoint
+    main-is:          Fixpoint.hs
+    build-depends:    base, containers, CS-Foundation
     hs-source-dirs:   examples
     default-language: Haskell2010
 

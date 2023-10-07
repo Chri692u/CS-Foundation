@@ -18,3 +18,4 @@ CS-Foundation is a library that implements well-known data structures with some 
 1. impure data structures
 2. better api design
 3. improve b+ so delete and rebalance is implemented
+4. improve graphs to have nodes containing Maybe data
