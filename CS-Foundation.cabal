@@ -14,8 +14,8 @@ extra-source-files:
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Matrix, Algorithms               
-  build-depends:       base, array
+  exposed-modules:     Matrix, Lattice Algorithms               
+  build-depends:       base, array, containers
   default-language:    Haskell2010
 
 executable matrix-io
@@ -27,6 +27,12 @@ executable matrix-io
 executable equation-system
     main-is:          EquationSystem.hs
     build-depends:    base, CS-Foundation
+    hs-source-dirs:   examples
+    default-language: Haskell2010
+
+executable fixpoint
+    main-is:          Fixpoint.hs
+    build-depends:    base, containers, CS-Foundation
     hs-source-dirs:   examples
     default-language: Haskell2010
 

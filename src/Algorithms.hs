@@ -1,7 +1,24 @@
 module Algorithms where
 
 import Matrix
+import Lattice
 import Data.Array
+import Data.Set (Set)
+import qualified Data.Set as Set
+
+-- | Tarski's fixed-point theorem
+tarski :: (Lattice a, Ord a) => (a -> a) -> a -> Set a -> a
+tarski f first lattice
+  | not (isComplete lattice) = error "The lattice is not complete." -- Check lattice completeness
+  | otherwise = fixpoint f first lattice
+  where
+    fixpoint g x lat
+      | lat' == lat = x  -- If the lattice remains unchanged, we've found a fixed point
+      | otherwise = fixpoint g x' lat'
+      where
+        step = lub x (g x)          -- Calculate the next candidate using lub
+        lat' = Set.insert step lat  -- Update the lattice with the new candidate
+        x' = lub x (g step)       -- Calculate the new candidate's lub with its image
 
 -- | Solve the equation system by backward substitution.
 solve :: (Fractional a, Eq a) => Matrix a -> Array Int a -> Array Int a
