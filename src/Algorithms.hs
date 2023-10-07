@@ -2,9 +2,31 @@ module Algorithms where
 
 import Matrix
 import Lattice
+import BPTree
 import Data.Array
 import Data.Set (Set)
+import Data.Maybe
 import qualified Data.Set as Set
+
+-- | Binary search on b+ trees
+search :: Ord k => k -> BPTree k v -> Maybe (k, v)
+search key (Leaf kvs) = case lookup key kvs of
+  (Just x) -> Just (key, x)
+  _ -> Nothing
+  
+search key (Node kts) = do
+  (_, pointer) <- go key kts
+  search key pointer
+  where
+    go key kts = case middle of
+        (_, []) -> listToMaybe kts
+        (lhs, (k, t) : rhs)
+            | key == k -> Just (k, t)
+            | key < k -> go key lhs
+            | otherwise -> go key rhs
+        where
+          middle = splitAt midIndex kts
+          midIndex = length kts `div` 2
 
 -- | Tarski's fixed-point theorem
 tarski :: (Lattice a, Ord a) => (a -> a) -> a -> Set a -> a

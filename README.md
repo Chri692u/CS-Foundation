@@ -12,6 +12,7 @@ CS-Foundation is a library that implements well-known data structures with some 
 2. QR decomposition of a matrix
 3. Backward substitution for solving equation systems
 4. Tarski's fixed point theorem
+5. Binary search on B+ trees
 
 # Current todo
 1. impure data structures

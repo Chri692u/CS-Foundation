@@ -42,26 +42,6 @@ instance (Binary k, Binary v) => Binary (BPTree k v) where
       1 -> Node <$> get
       _ -> fail "Invalid tag"
 
--- Binary search implementation
-search :: Ord k => k -> BPTree k v -> Maybe (k, v)
-search key (Leaf kvs) = case lookup key kvs of
-  (Just x) -> Just (key, x)
-  _ -> Nothing
-  
-search key (Node kts) = do
-  (_, pointer) <- go key kts
-  search key pointer
-  where
-    go key kts = case middle of
-        (_, []) -> listToMaybe kts
-        (lhs, (k, t) : rhs)
-            | key == k -> Just (k, t)
-            | key < k -> go key lhs
-            | otherwise -> go key rhs
-        where
-          middle = splitAt midIndex kts
-          midIndex = length kts `div` 2
-
 -- Insert a key-value pair into the B+ tree
 insert :: Ord k => k -> v -> BPTree k v -> BPTree k v
 insert key value (Leaf kvs) = Leaf (insertInOrder key value kvs)
