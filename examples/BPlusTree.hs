@@ -1,6 +1,7 @@
 module Main where
 
 import BPTree
+import Algorithms
 
 main :: IO ()
 main = do
