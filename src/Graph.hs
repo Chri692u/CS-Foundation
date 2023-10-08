@@ -16,7 +16,6 @@ data Graph = Graph
 emptyGraph :: Int -> Graph
 emptyGraph n = Graph n (Matrix n n (array ((1, 1), (n, n)) [((i, j), False) | i <- [1..n], j <- [1..n]]))
 
-
 -- | Add an edge between two vertices in the graph.
 addEdge :: Graph -> Int -> Int -> Graph
 addEdge graph v1 v2
