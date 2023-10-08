@@ -4,8 +4,8 @@ import Matrix
 import Lattice
 import BPTree
 import Data.Array
-import Data.Set (Set)
 import Data.Maybe
+import Data.Set (Set)
 import qualified Data.Set as Set
 
 -- | Binary search on b+ trees
