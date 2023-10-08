@@ -6,6 +6,7 @@ CS-Foundation is a library that implements well-known data structures with some 
 2. Lattices
 3. Graphs
 4. B+ Trees
+5. Type environment (Symbol table)
 
 # Impure data structures
 1. Queues
