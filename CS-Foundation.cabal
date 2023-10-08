@@ -14,8 +14,9 @@ extra-source-files:
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Matrix, Graph, Lattice, BPTree, Algorithms               
-  build-depends:       base, array, containers, binary
+  exposed-modules:     Matrix, Graph, Lattice, BPTree, Algorithms
+                       Impure.STQueue, Impure.STStack             
+  build-depends:       base, array, containers, mtl, transformers, binary
   default-language:    Haskell2010
 
 executable matrix-io
@@ -31,7 +32,7 @@ executable graph-io
     default-language: Haskell2010
 
 executable bplus-io
-    main-is:          BPlusTree.hs
+    main-is:          BPlusIO.hs
     build-depends:    base, CS-Foundation
     hs-source-dirs:   examples
     default-language: Haskell2010
@@ -47,6 +48,19 @@ executable fixpoint
     build-depends:    base, containers, CS-Foundation
     hs-source-dirs:   examples
     default-language: Haskell2010
+
+executable impure-queue
+    main-is:          Queue.hs
+    build-depends:    base, CS-Foundation
+    hs-source-dirs:   examples
+    default-language: Haskell2010
+
+executable impure-stack
+    main-is:          Stack.hs
+    build-depends:    base, CS-Foundation
+    hs-source-dirs:   examples
+    default-language: Haskell2010
+
 
 test-suite test-all
   type: exitcode-stdio-1.0

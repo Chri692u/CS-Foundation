@@ -1,11 +1,15 @@
 # CS-Foundation
 CS-Foundation is a library that implements well-known data structures with some operators and algorithms to support them.
 
-# Data Structures
+# Pure data structures
 1. Matrices
 2. Lattices
 3. Graphs
 4. B+ Trees
+
+# Impure data structures
+1. Queues
+2. Stacks
 
 # Algorithms
 1. Gram-schimidt orthogonalization of a matrix
