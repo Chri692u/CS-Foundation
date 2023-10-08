@@ -1,7 +1,6 @@
 module Main where
 
 import Matrix
-import Algorithms
 
 main :: IO ()
 main = do

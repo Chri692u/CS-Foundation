@@ -3,6 +3,10 @@ module Graph where
 import Matrix
 import Data.Array
 
+-------------------
+-- DATASTRUCTURE --
+-------------------
+
 -- | Data type representing an adjacency matrix for an undirected graph.
 type AdjMatrix = Matrix Bool
 

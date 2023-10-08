@@ -4,7 +4,6 @@ import Data.Set (Set)
 import qualified Data.Set as Set
 
 import Lattice
-import Algorithms
 
 -- Babylon's number is approximated using f x = (0.5 * (x + 2 / x)).
 babylonsNumber :: Double -> Double

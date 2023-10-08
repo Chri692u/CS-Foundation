@@ -13,7 +13,6 @@ extra-source-files:
 library
   hs-source-dirs:      src
   exposed-modules:     Matrix, Graph, Lattice, BPTree,
-                       Algorithms
                        Impure.STQueue, Impure.STStack             
   build-depends:       base, array, containers, mtl, transformers, binary
   default-language:    Haskell2010
